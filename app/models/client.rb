@@ -1,3 +1,6 @@
 class Client < ApplicationRecord
-	validates :nama, presence: true
+	has_many :projeks
+	
+	validates :name, presence: true
+	
 end

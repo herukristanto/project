@@ -1,0 +1,35 @@
+
+
+<div class="container">
+  <div class="row">
+    <%= form_for @projeks do |c| %>
+      
+       <div class="form-group">
+        <label>Nama Client</label>
+        <%= c.text_field :name, class:'form-control', placeholder: 'Masukan Name Client' %>
+      </div>
+
+      <%= c.fields_for :projeks do |pr| %>
+
+      <div class="form-group">
+        <label>Nama Project</label>
+        <%= pr.text_field :name_project, class:'form-control', placeholder: 'Name Project' %>
+      </div>
+
+      <div class="form-group">
+        <label>Staging url</label>
+        <%= pr.url_field :staging_url, class:'form-control', placeholder: 'Staging url' %>
+      </div>
+
+      <div class="form-group">
+        <label>Production url</label>
+        <%= pr.url_field :production_url, class:'form-control', placeholder: 'Production url' %>
+      </div>
+
+      <%= c.submit :Save, class:'btn btn-primary' %>
+
+      <% end %>
+    <% end %>
+
+  </div>
+</div>

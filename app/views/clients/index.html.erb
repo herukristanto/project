@@ -1,0 +1,39 @@
+<%= render 'navigation' %>
+
+<div><br><br></div>
+
+<div class="container">
+  <div class="row">
+   <div><%= link_to 'Tambah Data', new_client_path, class: 'btn btn-outline-primary' %></div>
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+        <tr>
+          <th class="text-center">Nama</th>
+          <th class="text-center">Nama Project</th>
+          <th class="text-center">Staging url</th>
+          <th class="text-center">Production url</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <% client.projeks.each do |pj| %>
+          <tr>
+            <td class="text-center"><%= client.name %></td>
+            <td><%= pj.name %></td>
+            <td><%= pj.staging_url %></td>
+            <td><%= pj.production_url %></td>
+            <td><%= link_to 'Detail', client_path(client), class: 'btn btn-warning' %>
+                <%= link_to 'Edit', edit_client_path(client), class: 'btn btn-success' %>
+                <%= link_to 'Delete',client_path(client), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
