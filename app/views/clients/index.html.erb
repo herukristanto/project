@@ -4,31 +4,46 @@
 
 <div class="container">
   <div class="row">
-   <div><%= link_to 'Tambah Data', new_client_path, class: 'btn btn-outline-primary' %></div>
-    <table class="table table-bordered table-hover table-responsive">
-      <thead>
+     <div class="col-xl-12 text-center m-0">
+                    <b class="CLAPPING">CLAPPING</b><b class="APE">APE</b>               
+     </div>
+   <table class="table table-bordered table-hover table-responsive ">
+    <!-- <table table-striped table-bordered" style="width:100%"> -->
+      <thead class="table-warning" >
         <tr>
-          <th class="text-center">Nama</th>
-          <th class="text-center">Nama Project</th>
-          <th class="text-center">Staging url</th>
-          <th class="text-center">Production url</th>
-          <th class="text-center">Action</th>
+          <th><div class="label">CLIENT</div></th>
+          <th><div class="label">PROJECT</div></th>
+          <th><div class="label">STAGING</div></th>
+          <th><div class="label">PRODUCT</div></th>
         </tr>
       </thead>
       <tbody>
         <% @clients.each do |client| %>
-          <% client.projeks.each do |pj| %>
-          <tr>
-            <td class="text-center"><%= client.name %></td>
-            <td><%= pj.name %></td>
-            <td><%= pj.staging_url %></td>
-            <td><%= pj.production_url %></td>
-            <td><%= link_to 'Detail', client_path(client), class: 'btn btn-warning' %>
-                <%= link_to 'Edit', edit_client_path(client), class: 'btn btn-success' %>
-                <%= link_to 'Delete',client_path(client), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-danger' %>
-            </td>
-          </tr>
-          <% end %>
+        <tr>
+        <td><%= client.name %></td> 
+             
+              <td>
+                <ul>
+                  <% client.projeks.each do |pj| %>
+                  <a><%= pj.name %></a><br>
+                  <% end %>
+                </ul>
+              </td>
+              <td>
+               <ul>
+                <% client.projeks.each do |pj| %>
+                  <a class="col-10 urlnya" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>                  
+                  <% end %>
+                </ul>
+              </td>
+              <td>
+               <ul>
+                <% client.projeks.each do |pj| %>
+                <a class="col-10 urlnya" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
+                  <% end %>
+                </ul>
+              </td>
+        </tr>
         <% end %>
       </tbody>
     </table>

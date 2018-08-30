@@ -2,30 +2,28 @@
 <%= render 'navigation' %>
 <div class="container">
   <div class="row">
-    <%= form_for(@client) do |client| %>
+    <% form_for(@client) do |client| %>
+      <ul>
+        <li><% client.text_field :name, class:'form-control', type: 'text', placeholder: 'Nama', disabled: true %></li>
+      </ul>
+ 
+      <ul>
+        <% form_for(client.projeks) do |pr| %>
+        <% pr.text_field :name, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %> </ul>
+        <% end %>
+      </ul>
+ 
+      <ul>
+        <% client.projeks do |pr| %>
+        <li><% pr.text_field :staging_url, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %>
+        <% end %>
+      </ul>
 
-        <div class="form-group">
-          <%= client.label :name %>
-          <%= client.text_field :name, class:'form-control', type: 'text', placeholder: 'Nama', disabled: true %>
-        </div>
-
-        <%= client.projeks do |pr| %>
-
-        <div class="form-group">
-          <%= pr.label :name %>
-          <%= pr.text_field :name, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %>
-        </div>
-
-        <div class="form-group">
-          <%= pr.label :staging_url %>
-          <%= pr.text_field :staging_url, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %>
-        </div>
-
-        <div class="form-group">
-          <%= pr.label :production_url %>
-          <%= pr.text_field :production_url, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %>
-        </div>
-     <% end %>
+      <ul>
+        <% client.projeks do |pr| %>
+        <li><% pr.text_field :production_url, class:'form-control', type: 'text', placeholder: 'Harga', disabled: true %></li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
