@@ -7,9 +7,15 @@
      <div class="col-xl-12 text-center m-0">
                     <b class="CLAPPING">CLAPPING</b><b class="APE">APE</b>               
      </div>
-   <table class="table table-bordered table-hover table-responsive ">
+
+<div class="row m-0">
+            <div class="col-xl-12 text-center m-0">
+                    <b class="PROJECT">PROJECT </b><b class="LIST">LIST</b>
+            </div>
+     
+   <table class="table">
     <!-- <table table-striped table-bordered" style="width:100%"> -->
-      <thead class="table-warning" >
+      <thead class="header" >
         <tr>
           <th><div class="label">CLIENT</div></th>
           <th><div class="label">PROJECT</div></th>
@@ -17,27 +23,27 @@
           <th><div class="label">PRODUCT</div></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="konten" >
         <% @clients.each do |client| %>
         <tr>
-        <td><%= client.name %></td> 
+        <td class="client mr-2" ><%= client.name %></td> 
              
-              <td>
+              <td class="col-10 isi" >
                 <ul>
                   <% client.projeks.each do |pj| %>
-                  <a><%= pj.name %></a><br>
+                  <a class="col-10 isi" ><%= pj.name %></a><br>
                   <% end %>
                 </ul>
               </td>
               <td>
-               <ul>
+               <ul class="row m-0" >
                 <% client.projeks.each do |pj| %>
-                  <a class="col-10 urlnya" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>                  
+                  <a class="col-10 urlnya" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>               
                   <% end %>
                 </ul>
               </td>
               <td>
-               <ul>
+               <ul class="row m-0" >
                 <% client.projeks.each do |pj| %>
                 <a class="col-10 urlnya" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
                   <% end %>
