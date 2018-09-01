@@ -1,8 +1,5 @@
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
 
 @font-face {
   font-family: Poppins-Regular;
@@ -118,41 +115,47 @@
           font-size: 15px;
         }
       }
- /* 
+
+/*Generic Styling, for Desktops/Laptops */
+/*nav{
+    transform: rotate(-1deg);
+}*/
+
+footer{
+  background: #FFCD00;
+  width: 100%;
 }
-}
-Generic Styling, for Desktops/Laptops 
-*/
 
 
 table { 
   box-shadow: 2px 2px 1px  grey;
   width: 100%;  
-  
+
 } 
+
 
 thead{
   background: #FFCD00;
 }
 
-th { 
-  color: black; 
+th {
+  
+  color: white; 
   font-weight: bold;
-  padding: 12px; 
+  padding: 13px; 
 }
 
 tbody{
   background-color: #FFFFFF;
-    border-radius: 16px;
+    
 }
 td { 
-  padding: 7px; 
-  border: 0px solid #ccc; 
-  font-family: normal;  
-}  
+  padding: 10px; 
+  font-family: normal;
+} 
 
 
-/*
+  /*
   Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
   */
   @media
@@ -163,6 +166,7 @@ td {
     /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
       display: block;
+
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
@@ -179,37 +183,40 @@ td {
     tr{
       background: #FFCD00;
       box-shadow: 2px 2px 1px  grey;
-      border-radius: 16px;
+      border-radius: 15px;
     }
     
     td {
       /* Behave  like a "row" */
       border: none;
       position: relative;
-      padding-left: 35%;
+      
+      padding-left: 40%;
     }
 
     td:before {
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
-      top: 2;
-      left: 6px;
-      width: 45%;
+      top: 10;
+      left: 10px;
+      width: 60%;
       padding-right: 10px;
       white-space: nowrap;
-      font-weight: bold; 
-    }
+      font-weight: bold;
+      text-align: left; 
 
+
+    }
     /*
     Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-  td:nth-of-type(1):before { content: "Client         :"; }
-  td:nth-of-type(2):before { content: "Project        :"; }
-  td:nth-of-type(3):before { content: "Staging url    :"; }
-  td:nth-of-type(4):before { content: "Production url :"; }
+  td:nth-of-type(1):before { content: "Client         "; }
+  td:nth-of-type(2):before { content: "Project        "; }
+  td:nth-of-type(3):before { content: "Staging url    "; }
+  td:nth-of-type(4):before { content: "Production url "; }
 
 }
-/*miring footer*/
+
 

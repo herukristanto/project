@@ -35,14 +35,18 @@ RailsAdmin.config do |config|
     bulk_delete 
     show
     edit
-    delete
+    delete 
+    # do
+    #     except ['Client']
+    # end
 
     # show_in_app
+
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
-  config.compact_show_view = false
+  # config.compact_show_view = false
 
   config.model 'Client' do
         weight 1

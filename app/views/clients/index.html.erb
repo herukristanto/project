@@ -12,31 +12,31 @@
     <table role="table" class="table-hover">
       <thead class="header bg-warning" >
         <tr>
-          <th role="columnheader" class="text-center">Client</th>
-          <th role="columnheader" class="text-center">Project</th>
-          <th role="columnheader" class="text-center">Staging url</th>
-          <th role="columnheader" class="text-center">Production url</th>
+          <th role="columnheader" class="text-center">CLIENTS</th>
+          <th role="columnheader" class="text-center">PROJECTS</th>
+          <th role="columnheader" class="text-center">STAGING URL</th>
+          <th role="columnheader" class="text-center">PRODUCTION URL</th>
         </tr>
       </thead>
         <tbody role="rowgroup">
           <% @clients.each do |client| %>
             <tr>
-              <td role="cell"><div class="row m-0" ><a class="col-10" ><%= client.name %></a></div></td> 
-              <td role="cell">
+              <td role="cell" class="text-center"><div class="row m-0" ><a class="col-10" ><%= client.name %></a></div></td> 
+              <td role="cell" class="text-center">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0" >
                     <a class="col-10" ><%= pj.name %></a><br>
                   </div>
                 <% end %>
               </td>
-              <td role="cell">
+              <td role="cell" class="text-center">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a class="col-10" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>  
                   </div>             
                 <% end %>
               </td>
-              <td role="cell">
+              <td role="cell" class="text-center">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
@@ -47,22 +47,9 @@
           <% end %>
         </tbody>
       </table>
-    </div>
-
+    </div>  
      
-      <!-- <section class="service">
-          <div class="section-container">
-              <h2></h2>
-              <p></p>
-          </div>
-      </section>
-      <section class="article">
-          <div class="section-container">
-              <h2></h2>
-              <p></p>
-          </div>
-      </section>
       
 
-   -->
+  
     
