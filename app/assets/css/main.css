@@ -1,0 +1,207 @@
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+   font-family: 'Pressura';
+   src: url("titlefonts/GT-Pressura-Bold.otf")
+   format("opentype");
+ }
+
+  @font-face {
+    font-family: 'Aquatico';
+    src: url("titlefonts/Aquatico-Regular.otf") 
+    format("opentype");
+  }
+
+@font-face {
+   font-family: 'Baryon';
+   src: url("titlefonts/Baryon Display SSi.ttf")
+   format("TrueType");
+ }
+
+/*//////////////////////////////////////////////////////////////////
+[ Judul ]*/
+
+  .CLAPPING {
+    font-size: 20px;
+    font-family: Aquatico;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00487c;
+  }
+    @media only screen and (min-width: 1025px) and (min-height: 601px){
+      .CLAPPING {
+        font-size: 15px;
+      }
+    }
+      @media only screen and (max-width: 360px) and (max-height: 640px){
+        .CLAPPING {
+          font-size: 15px;
+        }
+      }
+
+  .APE {
+    font-size: 20px;
+    font-family: Aquatico;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ae582a;
+  }
+    @media only screen and (min-width: 1025px) and (min-height: 601px){
+      .APE {
+        font-size: 15px;
+      }
+    }
+      @media only screen and (max-width: 360px) and (max-height: 640px){
+        .APE {
+          font-size: 15px;
+        }
+      }
+  
+  .PROJECT {
+    font-size: 50px;
+    font-family: Baryon;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ff6700;
+  }
+    @media only screen and (min-width: 1025px) and (min-height: 601px){
+      .PROJECT {
+        font-size: 50px;
+      }
+    }
+      @media only screen and (max-width: 360px) and (max-height: 640px){
+        .PROJECT {
+          font-size: 15px;
+        }
+      }
+
+  .LIST {
+    font-size: 50px;
+    font-family: Baryon;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ff6700;
+  }
+    @media only screen and (min-width: 1025px) and (min-height: 601px){
+      .LIST {
+        font-size: 50px;
+      }
+    }
+      @media only screen and (max-width: 360px) and (max-height: 640px){
+        .LIST {
+          font-size: 15px;
+        }
+      }
+ /* 
+}
+}
+Generic Styling, for Desktops/Laptops 
+*/
+
+
+table { 
+  
+  width: 100%; 
+  border-collapse: collapse; 
+  
+} 
+
+th { 
+  background: #FFCD00; 
+  color: black; 
+  font-weight: bold;
+  padding: 12px;   
+}
+
+td { 
+  padding: 7px; 
+  border: 0px solid #ccc; 
+  font-family: normal;  
+}  
+
+/*
+  Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+  */
+  @media
+    only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr{
+      background: #FFCD00;
+      box-shadow: 2px 2px 1px  grey;
+      border-radius: 10px;
+    }
+    
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      position: relative;
+      padding-left: 35%;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 2;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold; 
+    }
+
+
+    /*
+    Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+    */
+  td:nth-of-type(1):before { content: "Client         :"; }
+  td:nth-of-type(2):before { content: "Project        :"; }
+  td:nth-of-type(3):before { content: "Staging url    :"; }
+  td:nth-of-type(4):before { content: "Production url :"; }
+
+}

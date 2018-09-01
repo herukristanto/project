@@ -1,7 +1,11 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-
+  config.authenticate_with do
+        authenticate_or_request_with_http_basic('Login') do |username, password|
+            username == 'admin' && password == 'clappingape'
+        end
+    end
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
@@ -28,14 +32,27 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     export
-    bulk_delete
+    bulk_delete 
     show
     edit
     delete
-    show_in_app
 
+    # show_in_app
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
+  config.compact_show_view = false
+
+  config.model 'Client' do
+        weight 1
+
+        label_plural 'Clients'
+    end
+
+  config.model 'Projek' do
+        weight 1
+
+        label_plural 'Projects'
+    end              
 end
