@@ -4,13 +4,12 @@
 
 <div class="container">
   <div class="row">
+  
+  <div class="col-xl-12 text-center m-0"><br><br><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
+  <div class="col-xl-12 text-center m-0"><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
 
-    
-      <div class="col-xl-12 text-center m-0"><br><br><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
-      <div class="col-xl-12 text-center m-0"><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
-
-  <div class="table-responsive">
-   <table role="table" class="table-hover">
+  <div class="table-responsive rounded shadow ">
+    <table role="table" class="table-hover">
       <thead class="header bg-warning" >
         <tr>
           <th role="columnheader" class="text-center">Client</th>
@@ -24,36 +23,46 @@
             <tr>
               <td role="cell"><div class="row m-0" ><a class="col-10" ><%= client.name %></a></div></td> 
               <td role="cell">
-
-                  <% client.projeks.each do |pj| %>
-                    <div class="row m-0" >
-                      <a class="col-10" ><%= pj.name %></a><br></div>
-                  <% end %>
-
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0" >
+                    <a class="col-10" ><%= pj.name %></a><br>
+                  </div>
+                <% end %>
               </td>
               <td role="cell">
-
-                  <% client.projeks.each do |pj| %>
+                <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a class="col-10" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>  
-                    </div>             
-                  <% end %>
-
+                  </div>             
+                <% end %>
               </td>
               <td role="cell">
-
-                  <% client.projeks.each do |pj| %>
+                <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
                   </div>
-                  <% end %>
-
+                <% end %>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-     </div>
+    </div>
 
-  
+     
+      <!-- <section class="service">
+          <div class="section-container">
+              <h2></h2>
+              <p></p>
+          </div>
+      </section>
+      <section class="article">
+          <div class="section-container">
+              <h2></h2>
+              <p></p>
+          </div>
+      </section>
+      
+
+   -->
     
