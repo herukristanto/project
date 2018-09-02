@@ -121,28 +121,20 @@
     transform: rotate(-1deg);
 }*/
 
-footer{
-  background: #FFCD00;
-  width: 100%;
-}
-
-
 table { 
   box-shadow: 2px 2px 1px  grey;
-  width: 100%;  
+  width: 100%; 
 
 } 
-
 
 thead{
   background: #FFCD00;
 }
 
 th {
-  
   color: white; 
   font-weight: bold;
-  padding: 13px; 
+  padding: 12px; 
 }
 
 tbody{
@@ -150,11 +142,9 @@ tbody{
     
 }
 td { 
-  padding: 10px; 
+  padding: 12px; 
   font-family: normal;
-} 
-
-
+}
   /*
   Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
   */
@@ -190,22 +180,23 @@ td {
       /* Behave  like a "row" */
       border: none;
       position: relative;
+      padding-left: 30%;
+      text-align-last: left;
+      padding-right: 10px;
       
-      padding-left: 40%;
     }
 
     td:before {
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
-      top: 10;
+      top: 10px;
       left: 10px;
       width: 60%;
       padding-right: 10px;
       white-space: nowrap;
       font-weight: bold;
       text-align: left; 
-
 
     }
     /*
