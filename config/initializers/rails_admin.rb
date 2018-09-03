@@ -13,7 +13,6 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_admin)
   end
 
-
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
@@ -54,16 +53,15 @@ RailsAdmin.config do |config|
     # history_show
   end
   # config.compact_show_view = false
-
   config.model 'Client' do
-        label_plural 'Clients'
-          field :id
-          field :name
-          field :created_at 
-          field :updated_at
+    label_plural 'Clients'
+      field :id
+      field :name
+      field :created_at 
+      field :updated_at
   end
 
   config.model 'Projek' do
-        label_plural 'Projects'
+    label_plural 'Projects'
   end              
 end
