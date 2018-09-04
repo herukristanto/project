@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
 	end
 
 	def show
-		@client = Client.find(params[:id])
+
 	end
 
 	def new		
@@ -26,7 +26,7 @@ class ClientsController < ApplicationController
 	private
 
 	def client_params
-		params.require(:client, :projeks).permit(:name, :client_id, :name_project, :staging_url, :production_url)
+		params.require(:client).permit(:name, :client_id, :name_project, :staging_url, :production_url)
 	end
 	
 end

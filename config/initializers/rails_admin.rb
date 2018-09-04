@@ -1,6 +1,17 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
+  # config.authenticate_with do
+  #   authenticate_or_request_with_http_basic('Login') do |username, password|
+  #     username == 'admin' && password == 'clappingape'
+  #   end
+  # end
+  RailsAdmin.config do |config|
+  config.authenticate_with do
+    warden.authenticate! scope: :admin
+  end
+  config.current_user_method(&:current_admin)
+  end
 
   ## == Devise ==
   # config.authenticate_with do
@@ -22,20 +33,35 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
+  config.excluded_models << 'Admin'
 
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new
-    export
-    bulk_delete
+    # export
+    bulk_delete 
     show
     edit
-    delete
-    show_in_app
-
+    delete 
+    # do
+    #     except ['Client']
+    # end
+    # show_in_app
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
+  # config.compact_show_view = false
+  config.model 'Client' do
+    label_plural 'Clients'
+      field :id
+      field :name
+      field :created_at 
+      field :updated_at
+  end
+
+  config.model 'Projek' do
+    label_plural 'Projects'
+  end              
 end
