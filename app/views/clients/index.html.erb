@@ -1,54 +1,54 @@
-<%= render 'navigation' %>
-<br>
-<div class="container">
-  <div class="row">
-  
-  <div class="col-xl-12 text-center m-0"><br><br><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
-  <div class="col-xl-12 text-center m-0"><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
+<div class="col-xl-12 text-center m-0"><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
+<div class="col-xl-12 text-center m-0"><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
 
-  <div class="table-responsive rounded shadow ">
-    <table role="table" class="table-hover">
-      <thead class="header bg-warning" >
-        <tr>
-          <th role="columnheader" class="text-center">CLIENTS</th>
-          <th role="columnheader" class="text-center">PROJECTS</th>
-          <th role="columnheader" class="text-center">STAGING URL</th>
-          <th role="columnheader" class="text-center">PRODUCTION URL</th>
-        </tr>
-      </thead>
-        <tbody role="rowgroup">
+<div class="container">
+  <div class="rows">
+
+
+
+  <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+<br>
+						<div class="row header">
+							<div class="cell">CLIENT</div>
+                            <div class="cell">PROJECT</div>
+                            <div class="cell">STAGING</div>
+                            <div class="cell">PRODUCTION</div>
+						</div>
+
+
           <% @clients.each do |client| %>
-            <tr >
-              <td role="cell" class="text-center"><div class="row m-0" ><a class="col-10" ><%= client.name %></a></div></td> 
-              <td role="cell" class="text-center">
+            <div class="row">
+              <div class="cell" data-title="CLIENT">
+                <%= client.name %>
+              </div>
+              <div class="cell" data-title="PROJECT">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0" >
-                    <a class="col-10" ><%= pj.name %></a><br>
+                    <%= pj.name %><br>
                   </div>
                 <% end %>
-              </td>
-              <td role="cell" class="text-center">
+              </div>
+              <div class="cell" data-title="STAGING">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
-                    <a class="col-10" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>  
-                  </div>             
-                <% end %>
-              </td>
-              <td role="cell" class="text-center">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
-                    <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
+                    <a class="col-10" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>
                   </div>
                 <% end %>
-              </td>
-            </tr>
+              </div>
+              <div class="cell" data-title="PRODUCTION">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           <% end %>
-        </tbody>
-      </table>
-    </div>  
-  </span>
-     
-      
 
-  
-    
+      </div>
+		</div>
+	</div>
+  </span>

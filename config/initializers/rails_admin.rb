@@ -1,17 +1,17 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-  # config.authenticate_with do
-  #   authenticate_or_request_with_http_basic('Login') do |username, password|
-  #     username == 'admin' && password == 'clappingape'
-  #   end
-  # end
-  RailsAdmin.config do |config|
   config.authenticate_with do
-    warden.authenticate! scope: :admin
+    authenticate_or_request_with_http_basic('Login') do |username, password|
+      username == 'admin' && password == 'clappingape'
+    end
   end
-  config.current_user_method(&:current_admin)
-  end
+  #RailsAdmin.config do |config|
+  #config.authenticate_with do
+  #  warden.authenticate! scope: :admin
+  #end
+  #config.current_user_method(&:current_admin)
+  #end
 
   ## == Devise ==
   # config.authenticate_with do
@@ -40,10 +40,10 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     # export
-    bulk_delete 
+    bulk_delete
     show
     edit
-    delete 
+    delete
     # do
     #     except ['Client']
     # end
@@ -57,11 +57,11 @@ RailsAdmin.config do |config|
     label_plural 'Clients'
       field :id
       field :name
-      field :created_at 
+      field :created_at
       field :updated_at
   end
 
   config.model 'Projek' do
     label_plural 'Projects'
-  end              
+  end
 end
