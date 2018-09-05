@@ -435,14 +435,13 @@ iframe {
     font-family: Aquatico;
   }
 }
-<<<<<<< HEAD
 
 @media only screen and (max-width: 414px) {
   .CLAPPING {
     font-size: 30px;
     font-family: Aquatico;
   }
-=======
+
   /*
   Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
   */
@@ -500,7 +499,6 @@ iframe {
   td:nth-of-type(4):before { content: "Production url "; }
   td:nth-of-type(5):before { content: "Username       "; }
   td:nth-of-type(6):before { content: "Password       "; }
->>>>>>> 80aa6a7fa1bf8cede929302c73c691a2fb514ed5
 }
 
 .APE {
