@@ -1,5 +1,6 @@
 <%= render 'navigation' %>
 <br>
+<<<<<<< HEAD
 <div class="col-xl-12 text-center m-0"><br><br><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
 <div class="col-xl-12 text-center m-0"><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
 
@@ -19,8 +20,29 @@
                 <div class="cell">Production URL</div>
 						</div>
 
+=======
+<div class="container">
+  <div class="row">
+  
+  <div class="col-xl-12 text-center m-0"><br><br><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
+  <div class="col-xl-12 text-center m-0"><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
+>>>>>>> 80aa6a7fa1bf8cede929302c73c691a2fb514ed5
 
+  <div class="table-responsive rounded shadow ">
+    <table role="table" class="table-hover">
+      <thead class="header bg-warning" >
+        <tr>
+          <th role="columnheader" class="text-center">Clients</th>
+          <th role="columnheader" class="text-center">Projects</th>
+          <th role="columnheader" class="text-center">Staging URL</th>
+          <th role="columnheader" class="text-center">Username</th>
+          <th role="columnheader" class="text-center">Password</th>
+          <th role="columnheader" class="text-center">Production URL</th>
+        </tr>
+      </thead>
+        <tbody role="rowgroup">
           <% @clients.each do |client| %>
+<<<<<<< HEAD
             <div class="row">
               <div class="cell" data-title="Clients">
                 <div class="row m-0" >
@@ -28,11 +50,21 @@
                 </div>
               </div>
               <div class="cell" data-title="Projects">
+=======
+            <tr >
+              <td role="cell" class="text-center">
+                <div class="row m-0" >
+                  <a class="col-10" ><%= client.name %></a>
+                </div>
+              </td> 
+              <td role="cell" class="text-center">
+>>>>>>> 80aa6a7fa1bf8cede929302c73c691a2fb514ed5
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0" >
-                    <%= pj.name %><br>
+                    <a class="col-10" ><%= pj.name %></a><br>
                   </div>
                 <% end %>
+<<<<<<< HEAD
               </div>
               <div class="cell" data-title="Staging URL">
                 <% client.projeks.each do |pj| %>
@@ -59,12 +91,51 @@
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a href="<%= pj.production_url %>"><%= pj.production_url %></a><br>
+=======
+              </td>
+              <td role="cell" class="text-center">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10" href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>  
+                  </div>             
+                <% end %>
+              </td>
+              <td role="cell" class="text-center">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10"><%= pj.username %></a><br> 
                   </div>
                 <% end %>
-              </div>
-            </div>
+              </td>
+              <td role="cell" class="text-center">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10"><%= pj.password %></a><br> 
+>>>>>>> 80aa6a7fa1bf8cede929302c73c691a2fb514ed5
+                  </div>
+                <% end %>
+              </td>
+              <td role="cell" class="text-center">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
+                  </div>
+                <% end %>
+              </td>
+            </tr>
           <% end %>
+<<<<<<< HEAD
 
       </div>
 
+=======
+        </tbody>
+      </table>
+    </div>  
+>>>>>>> 80aa6a7fa1bf8cede929302c73c691a2fb514ed5
   </span>
+     
+      
+
+  
+    
