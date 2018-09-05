@@ -210,6 +210,8 @@ td {
   td:nth-of-type(2):before { content: "Project        "; }
   td:nth-of-type(3):before { content: "Staging url    "; }
   td:nth-of-type(4):before { content: "Production url "; }
+  td:nth-of-type(5):before { content: "Username       "; }
+  td:nth-of-type(6):before { content: "Password       "; }
 }
 
 

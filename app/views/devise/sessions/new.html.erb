@@ -1,51 +1,9 @@
-<body>
-  <%= render 'navigation' %>
-  <br>
-  <div class="rows m-0">
-    <div class="col-9 logo1 text-right">CLAPPING</div><div class="col-3 logo2">APE</div>
-  </div>
-
-  <div class="kotak1">
-    <div class="logo3">CAP.IT.ALL.DIG.IT.ALL</div>
-  </div>
-<div class="kotak2">
-	<div class="container">
-		  <div class="konten">
-
-          <form>
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text" class="form-control border-left-none border-top-none border-right-none box-shadow-none" placeholder="Username">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="input-group">
-                <input type="password" class="form-control border-left-none border-top-none border-right-none box-shadow-none" placeholder="Password">
-
-              </div>
-            </div>
-
-            <div class="form-group">
-              <button class="btn btn-rounded" type="submit">Masuk</button>
-            </div>
-          </form>
-          <div class="forget text-right">
-          	<a class="forget" href="#">Saya lupa password saya</a>
-          </div>
-        </div>
-
-
-	</div>
-</div>
-
-
-  <!-- BINGGUNG NGEIMPLEMENTNYA BY: AKMAL
+<body class="bg-dark">
   <div class="container py-5">
-    <div class="rows">
+    <div class="row">
       <div class="col-md">
-
-        <div class="rows">
+        <h2 class="text-center text-white mb-2">Login Admin</h2>
+        <div class="row">
           <div class="col-md-5 mx-auto">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="card rounded-0 border-warning">
@@ -81,7 +39,7 @@
               </div>
 
               <div class="actions">
-                <%= f.submit "Login", class:'btn btn-success btn-sm float-right'%>
+                <%= f.submit "Login", class:'btn btn-success btn-lg float-right'%> 
                 </div>
               <% end %>
                 <%= render "devise/shared/links"%>
@@ -91,5 +49,5 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </body>
