@@ -52,19 +52,19 @@ RailsAdmin.config do |config|
   config.model 'Client' do
     label_plural 'Clients'
       # field :id
-      field :name
-      field :created_at 
-      field :updated_at
+      # field :name
+      # field :created_at 
+      # field :updated_at
   end
   config.model 'Projek' do
     label_plural 'Projects'
       # field :id
-      field :name
-      field :staging_url
-      field :production_url
-      field :username
+      # field :name
+      # field :staging_url
+      # field :production_url
+      # field :username
       # field :password
-      field :created_at 
-      field :updated_at
+      # field :created_at 
+      # field :updated_at
   end              
 end
