@@ -12,15 +12,14 @@
         <tr>
           <th role="columnheader" class="text-center">Clients</th>
           <th role="columnheader" class="text-center">Projects</th>
-          <th role="columnheader" class="text-center">Staging url</th>
-          <th role="columnheader" class="text-center">Production url</th>
+          <th role="columnheader" class="text-center">Staging URL</th>
           <th role="columnheader" class="text-center">Username</th>
           <th role="columnheader" class="text-center">Password</th>
+          <th role="columnheader" class="text-center">Production URL</th>
         </tr>
       </thead>
         <tbody role="rowgroup">
           <% @clients.each do |client| %>
-          
             <tr >
               <td role="cell" class="text-center">
                 <div class="row m-0" >
@@ -44,13 +43,6 @@
               <td role="cell" class="text-center">
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
-                    <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
-                  </div>
-                <% end %>
-              </td>
-              <td role="cell" class="text-center">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
                     <a class="col-10"><%= pj.username %></a><br> 
                   </div>
                 <% end %>
@@ -59,6 +51,13 @@
                 <% client.projeks.each do |pj| %>
                   <div class="row m-0">
                     <a class="col-10"><%= pj.password %></a><br> 
+                  </div>
+                <% end %>
+              </td>
+              <td role="cell" class="text-center">
+                <% client.projeks.each do |pj| %>
+                  <div class="row m-0">
+                    <a class="col-10" href="<%= pj.production_url %>"><%= pj.production_url %></a><br> 
                   </div>
                 <% end %>
               </td>
