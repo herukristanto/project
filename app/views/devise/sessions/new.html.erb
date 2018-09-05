@@ -1,5 +1,4 @@
 <body>
-  <%= render 'navigation' %>
   <br>
   <div class="rows m-0">
     <div class="col-9 logo1 text-right">CLAPPING</div><div class="col-3 logo2">APE</div>
@@ -12,27 +11,32 @@
 	<div class="container">
 		  <div class="konten">
 
-          <form>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
               <div class="input-group">
-                <input type="text" class="form-control border-left-none border-top-none border-right-none box-shadow-none" placeholder="Username">
+
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control border-left-none border-top-none border-right-none box-shadow-none', placeholder:"Email" %>
+                <div class="invalid-feedback">Oops, you missed this one.</div>
               </div>
             </div>
 
             <div class="form-group">
               <div class="input-group">
-                <input type="password" class="form-control border-left-none border-top-none border-right-none box-shadow-none" placeholder="Password">
 
+                <%= f.password_field :password, autocomplete: "current-password", class:'form-control border-left-none border-top-none border-right-none box-shadow-none', placeholder:"Password"%>
+                <div class="invalid-feedback">Enter your password too!</div>
               </div>
             </div>
 
-            <div class="form-group">
-              <button class="btn btn-rounded" type="submit">Masuk</button>
+            <% if devise_mapping.rememberable? -%>
+
+
+            <% end -%>
+            <div class="actions">
+              <%= f.submit "Login", class:'btn btn-rounded float-right'%>
             </div>
-          </form>
-          <div class="forget text-right">
-          	<a class="forget" href="#">Saya lupa password saya</a>
-          </div>
+          <% end -%>
+
         </div>
 
 
