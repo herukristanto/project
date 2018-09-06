@@ -19,29 +19,17 @@
                 <div class="invalid-feedback">Oops, you missed this one.</div>
               </div>
             </div>
-
             <div class="form-group">
               <div class="input-group">
-
                 <%= f.password_field :password, autocomplete: "current-password", class:'form-control border-left-none border-top-none border-right-none box-shadow-none', placeholder:"Password"%>
                 <div class="invalid-feedback">Enter your password too!</div>
               </div>
             </div>
-
-            <% if devise_mapping.rememberable? -%>
-
-
-            <% end -%>
-            <div class="actions">
-              <%= f.submit "Login", class:'btn btn-rounded float-right'%>
-            </div>
-          <% end -%>
-
-        </div>
-
-
+          <div class="actions">
+        <%= f.submit "Login", class:'btn btn-rounded float-right'%>
+      </div>
+        <% end -%>
+    </div >
 	</div>
 </div>
-
-
 </body>

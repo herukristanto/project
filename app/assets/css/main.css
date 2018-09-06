@@ -119,7 +119,7 @@ iframe {
 
 .btn {
   color: white;
-  background-color: #ff7e42;
+  background-color: #B4541E;
 
 }
 
@@ -691,4 +691,8 @@ iframe {
   .table, .row, .cell {
     width: 100% !important;
   }
+}
+
+.bg-color-nav{
+  background-color: #FF742C;
 }
