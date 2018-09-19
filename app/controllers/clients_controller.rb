@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
 
 	end
 
-	def new		
+	def new
 	end
 
 	def create
@@ -28,5 +28,5 @@ class ClientsController < ApplicationController
 	def client_params
 		params.require(:client).permit(:name, :client_id, :name_project, :staging_url, :production_url)
 	end
-	
+
 end

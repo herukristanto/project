@@ -1,69 +1,56 @@
 <%= render 'navigation' %>
-<br>
-<div class="col-xl-12 text-center m-0"><br><br><b class="CLAPPING">CLAPPING</b><b class="APE">APE</b></div>
-<div class="col-xl-12 text-center m-0"><b class="PROJECT">PROJECT </b><b class="LIST">LIST</b></div>
 
-
-  <div class="rows">
-
-    <div class="limiter">
+<div class="limiter">
 		<div class="container-table100">
-					<div class="table">
-<br>
-						<div class="row header">
-                <div class="cell">Clients</div>
-                <div class="cell">Projects</div>
-                <div class="cell">Staging URL</div>
-                <div class="cell">Username</div>
-                <div class="cell">Password</div>
-                <div class="cell">Production URL</div>
-						</div>
-
-          <% @clients.each do |client| %>
-            <div class="row">
-              <div class="cell" data-title="Clients">
-                <div class="row m-0" >
-                  <%= client.name %>
-                </div>
-              </div>
-              <div class="cell" data-title="Projects">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0" >
-                    <%= pj.name %><br>
-                  </div>
-                <% end %>
-              </div>
-              <div class="cell" data-title="Staging URL">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
-                    <a href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>
-                  </div>
-                <% end %>
-              </div>
-              <div class="cell" data-title="Username">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
-                    <%= pj.username %><br>
-                  </div>
-                <% end %>
-              </div>
-              <div class="cell" data-title="Password">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
-                    <%= pj.password %><br>
-                  </div>
-                <% end %>
-              </div>
-              <div class="cell" data-title="Production URL">
-                <% client.projeks.each do |pj| %>
-                  <div class="row m-0">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Clients</th>
+								<th class="column2">Project</th>
+								<th class="column3">Staging URL</th>
+								<th class="column4">Username</th>
+								<th class="column5">Password</th>
+								<th class="column6">Production URL</th>
+							</tr>
+						</thead>
+						<tbody>
+              <% @clients.each do |client| %>
+								<tr>
+									<td class="column1">
+                    <%= client.name %>
+                  </td>
+									<td class="column2">
+                    <% client.projeks.each do |pj| %>
+                      <%= pj.name %>
+                    <% end %>
+                  </td>
+									<td class="column3">
+                    <% client.projeks.each do |pj| %>
+                      <a href="<%= pj.staging_url %>"><%= pj.staging_url %></a><br>
+                    <% end %>
+                  </td>
+									<td class="column4">
+                    <% client.projeks.each do |pj| %>
+                      <%= pj.username %>
+                    <% end %>
+                  </td>
+									<td class="column5">
+                    <% client.projeks.each do |pj| %>
+                      <%= pj.password %> <br>
+                    <% end %>
+                  </td>
+									<td class="column6">
+                    <% client.projeks.each do |pj| %>
                     <a href="<%= pj.production_url %>"><%= pj.production_url %></a><br>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-
-      </div>
-
-  </span>
+                    <% end %>
+                  </td>
+								</tr>
+              <% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
